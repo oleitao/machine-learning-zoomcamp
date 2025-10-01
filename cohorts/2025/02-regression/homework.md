@@ -38,6 +38,7 @@ There's one column with missing values. What is it?
 * `'vehicle_weight'`
 * `'model_year'`
 
+Q1: `'horsepower'`
 
 ### Question 2
 
@@ -47,6 +48,8 @@ What's the median (50% percentile) for variable `'horsepower'`?
 - 99
 - 149
 - 199
+
+Q2: 149
 
 ### Prepare and split the dataset
 
@@ -72,6 +75,7 @@ Options:
 - With mean
 - Both are equally good
 
+Q3: With mean
 
 ### Question 4
 
@@ -92,6 +96,7 @@ Options:
 - 10
 - 100
 
+Q4: 0
 
 ### Question 5 
 
@@ -115,6 +120,7 @@ What's the value of std?
 > If it's high, the values are different. 
 > If standard deviation of scores is low, then our model is *stable*.
 
+Q5: 0.006
 
 ### Question 6
 
@@ -129,6 +135,8 @@ Options:
 - 0.515
 - 5.15
 - 51.5
+
+Q6: 0.515
 
 ## Submit the results
 
