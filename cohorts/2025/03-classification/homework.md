@@ -33,6 +33,7 @@ What is the most frequent observation (mode) for the column `industry`?
 - `healthcare`
 - `retail`
 
+Q1: retail
 
 ### Question 2
 
@@ -47,6 +48,8 @@ What are the two features that have the biggest correlation?
 - `annual_income` and `interaction_count`
 
 Only consider the pairs above when answering this question.
+
+Q2: annual_income and interaction_count
 
 ### Split the data
 
@@ -66,6 +69,7 @@ Which of these variables has the biggest mutual information score?
 - `lead_source`
 - `employment_status`
 
+Q3: lead_source
 
 ### Question 4
 
@@ -83,6 +87,7 @@ What accuracy did you get?
 - 0.84
 - 0.94
 
+Q4: 0.74
 
 ### Question 5 
 
@@ -99,6 +104,7 @@ Which of following feature has the smallest difference?
 
 > **Note**: The difference doesn't have to be positive.
 
+Q5: employment_status
 
 ### Question 6
 
@@ -114,6 +120,8 @@ Which of these `C` leads to the best accuracy on the validation set?
 - 1
 - 10
 - 100
+
+Q6: 0.01
 
 > **Note**: If there are multiple options, select the smallest `C`.
 
