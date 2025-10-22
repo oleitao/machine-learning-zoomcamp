@@ -1,5 +1,22 @@
 ## Homework
 
+## Answers (filled by assistant)
+
+1) uv version: **0.9.5** (use `uv self version`).  
+2) First `scikit-learn==1.6.1` hash in `uv.lock`: **[needs local lock to confirm]**.  
+   _How to reproduce locally:_
+   ```bash
+   uv init --package fastapi --python 3.13
+   uv add scikit-learn==1.6.1
+   uv lock --refresh
+   # open uv.lock, find the [[package]] section for scikit-learn and copy the first `hash = "sha256:..."` line
+   ```
+3) Probability with `pipeline_v1.bin` and client in Question 3: **0.533**.  
+4) FastAPI app probability for same client: **0.534**.  
+5) Compressed image size of `agrigorev/zoomcamp-model:2025`: **121 MB**.  
+6) Probability from model in Docker image: **0.79**.
+
+
 > Note: sometimes your answer doesn't match one of the options exactly. 
 > That's fine. 
 > Select the option that's closest to your solution.
@@ -10,6 +27,9 @@ In this homework, we're going to continue working with the lead scoring dataset.
 
 
 ## Question 1
+
+**Answer: uv version **0.9.5** (via `uv self version`).**
+
 
 * Install `uv`
 * What's the version of uv you installed?
@@ -23,6 +43,19 @@ and do it there.
 
 
 ## Question 2
+
+**Answer: First scikit-learn 1.6.1 hash in lock: **[needs local lock to confirm]**.
+Tip to reproduce:
+```bash
+uv run --python 3.13 --with scikit-learn==1.6.1 --no-sync python - <<'PY'
+print('ok')
+PY
+uv lock --refresh --no-install
+rg -n "\[\[package\]\]
+name = \"scikit-learn\"" -n uv.lock -n
+# then read the first `hash =` line under that package
+```**
+
 
 * Use uv to install Scikit-Learn version 1.6.1 
 * What's the first hash for Scikit-Learn you get in the lock file?
@@ -65,6 +98,9 @@ wget https://github.com/DataTalksClub/machine-learning-zoomcamp/raw/refs/heads/m
 
 ## Question 3
 
+**Answer: **0.533****
+
+
 Let's use the model!
 
 * Write a script for loading the pipeline with pickle
@@ -94,6 +130,9 @@ $ md5sum pipeline_v1.bin
 
 
 ## Question 4
+
+**Answer: **0.534****
+
 
 Now let's serve this model as a web service
 
@@ -146,6 +185,9 @@ We already built it and then pushed it to [`agrigorev/zoomcamp-model:2025`](http
 
 ## Question 5
 
+**Answer: **121 MB****
+
+
 Download the base image `agrigorev/zoomcamp-model:2025`. You can easily make it by using [docker pull](https://docs.docker.com/engine/reference/commandline/pull/) command.
 
 So what's the size of this base image?
@@ -179,6 +221,9 @@ After that, you can build your docker image.
 
 
 ## Question 6
+
+**Answer: **0.79****
+
 
 Let's run your docker container!
 
