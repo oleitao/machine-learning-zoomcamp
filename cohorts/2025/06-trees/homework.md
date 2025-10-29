@@ -46,6 +46,7 @@ Which feature is used for splitting the data?
 * `'origin'`
 * `'fuel_type'`
 
+Q1. vehicle_weight
 
 ## Question 2
 
@@ -63,6 +64,7 @@ What's the RMSE of this model on the validation data?
 * 4.5
 * 45.0
 
+Q2. 0.45
 
 ## Question 3
 
@@ -84,6 +86,8 @@ Consider 3 decimal places for calculating the answer.
 If it doesn't stop improving, use the latest iteration number in
 your answer.
 
+Q3. 200
+
 
 ## Question 4
 
@@ -103,6 +107,7 @@ What's the best `max_depth`, using the mean RMSE?
 * 20
 * 25
 
+Q4. 10
 
 # Question 5
 
@@ -133,6 +138,7 @@ What's the most important feature (among these 4)?
 * `acceleration`
 * `engine_displacement`	
 
+Q5. vehicle_weight
 
 ## Question 6
 
@@ -164,6 +170,8 @@ Which eta leads to the best RMSE score on the validation dataset?
 * 0.3
 * 0.1
 * Both give equal value
+
+Q6. 0.3
 
 ## Submit the results
 
