@@ -3,7 +3,6 @@
 __pycache__/
 **my_dir/
 **logs/
-**models/
 
 # file types
 *.h5

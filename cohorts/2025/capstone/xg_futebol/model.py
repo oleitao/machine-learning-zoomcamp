@@ -130,7 +130,7 @@ def train_model(
 
     if calibration in ("sigmoid", "isotonic"):
         clf = CalibratedClassifierCV(
-            base_estimator=base_model,
+            estimator=base_model,
             cv=5,
             method=calibration,
         )

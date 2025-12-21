@@ -119,17 +119,13 @@ jupyter notebook notebook.ipynb
 Train Logistic Regression (baseline) with Platt (sigmoid) calibration:
 
 ```bash
-python train.py logreg \
-    --events-dir data/statsbomb-open-data/data/events \
-    --calibration sigmoid
+python train.py logreg --events-dir data/statsbomb-open-data/data/events --calibration sigmoid
 ```
 
 Train Random Forest without calibration:
 
 ```bash
-python train.py random_forest \
-    --events-dir data/statsbomb-open-data/data/events \
-    --calibration none
+python train.py random_forest --events-dir data/statsbomb-open-data/data/events --calibration none
 ```
 
 Main arguments for `train.py`:
@@ -158,7 +154,8 @@ The script:
 - saves the pipeline (preprocessing + model + calibration) to:
 
 ```text
-models/xg_<model_name>[_<calibration>].joblib
+models/xg_logreg_sigmoid.joblib
+models/xg_random_forest.joblib
 ```
 
 The exact path is printed at the end of training.
@@ -282,21 +279,21 @@ docker run -it --rm \
 
    ```bash
    gcloud auth login
-   gcloud config set project <O_TEUS_PROJECT_ID>
+   gcloud config set project <PROJECT_ID>
    ```
 
 2. Build the image and push it to Artifact Registry/Container Registry:
 
    ```bash
    cd cohorts/2025/capstone
-   gcloud builds submit --tag gcr.io/<O_TEUS_PROJECT_ID>/xg-service .
+   gcloud builds submit --tag gcr.io/<PROJECT_ID>/xg-service .
    ```
 
 3. Deploy to Cloud Run (exposing port 9696):
 
    ```bash
    gcloud run deploy xg-service \
-     --image gcr.io/<O_TEUS_PROJECT_ID>/xg-service \
+     --image gcr.io/<PROJECT_ID>/xg-service \
      --platform managed \
      --region europe-west1 \
      --allow-unauthenticated \
